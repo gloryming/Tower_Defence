@@ -2,7 +2,7 @@
 var gameMenu = cc.Layer.extend({
 	ctor:function(){
 		this._super();
-        //this.init();
+        this.init();
 	},
 
 	init:function(){
