@@ -66,13 +66,13 @@ var MyLayer = cc.Layer.extend({
                                                this.onAdventure,
                                                this);
           //boss_btn
-          var boss = cc.Sprite.createWithSpriteFrameName("btn_adventure_normal_CN.png");
-          var bossSelected = cc.Sprite.createWithSpriteFrameName("btn_adventure_pressed_CN.png");
+          var boss = cc.Sprite.createWithSpriteFrameName("btn_boss_normal_CN.png");
+          var bossSelected = cc.Sprite.createWithSpriteFrameName("btn_boss_pressed_CN.png");
           var btnBoss = cc.MenuItemSprite.create(boss,
                                                bossSelected);
           //nest_btn
-          var nest = cc.Sprite.createWithSpriteFrameName("btn_adventure_normal_CN.png");
-          var nestSelected = cc.Sprite.createWithSpriteFrameName("btn_adventure_pressed_CN.png");
+          var nest = cc.Sprite.createWithSpriteFrameName("btn_nest_normal_CN.png");
+          var nestSelected = cc.Sprite.createWithSpriteFrameName("btn_nest_pressed_CN.png");
           var btnNest = cc.MenuItemSprite.create(nest,
                                                nestSelected);
           var menuPattern= cc.Menu.create(btnAdventure,btnBoss,btnNest);
