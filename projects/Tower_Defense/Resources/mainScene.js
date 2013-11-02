@@ -12,7 +12,9 @@ require("jsb.js");
 var appFiles = [
     'src/resource.js',
     'src/menuScene.js',
-    'src/gameLayer.js'
+    'src/gameLayer.js',
+    'src/settingLayer.js',
+    'src/helpLayer.js'
 ];
 
 cc.dumpConfig();

@@ -11,20 +11,11 @@ var MyLayer = cc.Layer.extend({
 
     init:function () {
         this._super();
-        //var helloworld = cc.LabelTTF.create("helloworld", "", 48);
-        /*helloworld.setPosition(winSize.width / 2, winSize.height / 2);
-        this.addChild(helloworld,0);
-          var scene = cc.Scene.create();
-        var layer = new gameMenu();
-        scene.addChild(layer);
-        director.replaceScene(scene);*/
         cc.SpriteFrameCache.getInstance().addSpriteFrames("mainscene1-hd.plist");
-        //this.spriteSheet = cc.SpriteBatchNode.create("mainscene1-hd.pvr.ccz");
-        //this.addChild(this.spriteSheet);
+       
         //bacground
         var bg = cc.Sprite.createWithSpriteFrameName("mainbg.png");
         bg.setPosition(winSize.width / 2, winSize.height / 2);
-        // spriteSheet.addChild(bg); error
         this.addChild(bg);
           //game_logo
           var logo = cc.Sprite.createWithSpriteFrameName("mainbg_CN.png");
