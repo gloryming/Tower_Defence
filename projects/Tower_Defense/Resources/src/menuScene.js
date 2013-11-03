@@ -1,22 +1,31 @@
 var director = cc.Director.getInstance();
 var winSize = cc.Director.getInstance().getWinSize();
+var audioEngine = cc.AudioEngine.getInstance();
 
 var layer_zOrder={bg:0, middle:10,front:100};
 var MyLayer = cc.Layer.extend({
     spriteSheet:null,
     ctor:function() {
-        this._super();
-        cc.associateWithNative( this, cc.Layer );
+          this._super();
+          cc.associateWithNative( this, cc.Layer );
     },
 
     init:function () {
-        this._super();
-        cc.SpriteFrameCache.getInstance().addSpriteFrames("mainscene1-hd.plist");
-       
-        //bacground
-        var bg = cc.Sprite.createWithSpriteFrameName("mainbg.png");
-        bg.setPosition(winSize.width / 2, winSize.height / 2);
-        this.addChild(bg);
+          this._super();
+          cc.SpriteFrameCache.getInstance().addSpriteFrames("mainscene1-hd.plist");
+          cc.SpriteFrameCache.getInstance().addSpriteFrames("setting01-hd.plist");
+          cc.SpriteFrameCache.getInstance().addSpriteFrames("setting02-hd.plist");
+          cc.SpriteFrameCache.getInstance().addSpriteFrames("help_1-hd.plist")
+          cc.SpriteFrameCache.getInstance().addSpriteFrames("help_3-hd.plist")
+          //bgMusic
+          if (!audioEngine.isMusicPlaying())
+          {
+              audioEngine.playMusic("BGMusic.mp3",true);
+          }
+          //background
+          var bg = cc.Sprite.createWithSpriteFrameName("mainbg.png");
+          bg.setPosition(winSize.width / 2, winSize.height / 2);
+          this.addChild(bg);
           //game_logo
           var logo = cc.Sprite.createWithSpriteFrameName("mainbg_CN.png");
           logo.setPosition(winSize.width / 2, winSize.height / 2);
@@ -45,10 +54,20 @@ var MyLayer = cc.Layer.extend({
           var setting = cc.Sprite.createWithSpriteFrameName("btn_setting_normal.png");
           var settingSelected = cc.Sprite.createWithSpriteFrameName("btn_setting_pressed.png");
           var btnSetting = cc.MenuItemSprite.create(setting,
-                                             settingSelected);
-          var menuSetting = cc.Menu.create(btnSetting);
-          menuSetting.setPosition(winSize.width / 5,winSize.height / 3);
-          this.addChild(menuSetting);
+                                             settingSelected,
+                                                    this.onSetting,
+                                                    this);
+          //help_btn
+          var help = cc.Sprite.createWithSpriteFrameName("btn_help_normal.png");
+          var helpSelected = cc.Sprite.createWithSpriteFrameName("btn_help_pressed.png");
+          var btnHelp = cc.MenuItemSprite.create(help,
+                                                helpSelected,
+                                                 this.onhelp,
+                                                 this);
+          var menuSettingHelp = cc.Menu.create(btnSetting,btnHelp);
+          menuSettingHelp.setPosition(winSize.width / 5,winSize.height / 3);
+          btnHelp.setPosition(winSize.width / 1.6, 0);
+          this.addChild(menuSettingHelp);
           //adventure_btn
           var adventure = cc.Sprite.createWithSpriteFrameName("btn_adventure_normal_CN.png");
           var adventureSelected = cc.Sprite.createWithSpriteFrameName("btn_adventure_pressed_CN.png");
@@ -70,28 +89,41 @@ var MyLayer = cc.Layer.extend({
           menuPattern.setPosition(winSize.width / 2,winSize.height / 8);
           menuPattern.alignItemsHorizontallyWithPadding(0.3);
           this.addChild(menuPattern);
-        return true;
+          return true;
     },
   onAdventure:function(sender)
   {
-  var scene = cc.Scene.create();
-  var layer = new gameMenu();
-  scene.addChild(layer);
-  director.replaceScene(layer);
+          var scene = cc.Scene.create();
+          var layer = new gameMenu();
+          scene.addChild(layer);
+          director.replaceScene(scene);
    },
-
-});
+  onSetting:function()
+  {
+          var scene = cc.Scene.create();
+          var layer = new settingLayer();
+          scene.addChild(layer);
+          director.replaceScene(cc.TransitionSlideInT.create(0.3, scene));
+  },
+  onhelp:function()
+  {
+          var scene = cc.Scene.create();
+          var layer = new helpLayer();
+          scene.addChild(layer);
+          director.replaceScene(cc.TransitionSlideInT.create(0.3, scene));
+  }
+ });
 
 var MyScene = cc.Scene.extend({
     ctor:function() {
-        this._super();
-        cc.associateWithNative( this, cc.Scene );
+         this._super();
+         cc.associateWithNative( this, cc.Scene );
     },
 
     onEnter:function () {
-        this._super();
-        var layer = new MyLayer();
-        this.addChild(layer);
-        layer.init();
+         this._super();
+         var layer = new MyLayer();
+         this.addChild(layer);
+         layer.init();
     }
 });

@@ -221,9 +221,7 @@
 		1AB87014175E0768005D39BF /* WebSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87012175E0768005D39BF /* WebSocket.cpp */; };
 		1AB87017175E0773005D39BF /* jsb_websocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AB87015175E0773005D39BF /* jsb_websocket.cpp */; };
 		1AB8701E175E07C6005D39BF /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB8701D175E07C6005D39BF /* libwebsockets.a */; };
-		1AE4B40316D1FECD003C6D1C /* mainScene.js in Sources */ = {isa = PBXBuildFile; fileRef = 1AE4B40016D1FECD003C6D1C /* mainScene.js */; };
 		1AE4B40516D1FECD003C6D1C /* src in Resources */ = {isa = PBXBuildFile; fileRef = 1AE4B40216D1FECD003C6D1C /* src */; };
-		1AE4B40616D1FF4C003C6D1C /* mainScene.js in Resources */ = {isa = PBXBuildFile; fileRef = 1AE4B40016D1FECD003C6D1C /* mainScene.js */; };
 		35865BAC1821437D0032F173 /* res in Resources */ = {isa = PBXBuildFile; fileRef = 35865BAB1821437D0032F173 /* res */; };
 		A92275421517C094001B78AA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275411517C094001B78AA /* QuartzCore.framework */; };
 		A92275441517C094001B78AA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A92275431517C094001B78AA /* OpenGLES.framework */; };
@@ -679,7 +677,6 @@
 		1AB87016175E0773005D39BF /* jsb_websocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsb_websocket.h; sourceTree = "<group>"; };
 		1AB8701B175E07C6005D39BF /* libwebsockets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libwebsockets.h; sourceTree = "<group>"; };
 		1AB8701D175E07C6005D39BF /* libwebsockets.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libwebsockets.a; sourceTree = "<group>"; };
-		1AE4B40016D1FECD003C6D1C /* mainScene.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = mainScene.js; path = ../Resources/mainScene.js; sourceTree = "<group>"; };
 		1AE4B40216D1FECD003C6D1C /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; name = src; path = ../Resources/src; sourceTree = "<group>"; };
 		35865BAB1821437D0032F173 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; name = res; path = ../Resources/res; sourceTree = "<group>"; };
 		A922753D1517C094001B78AA /* Tower_Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tower_Defense.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -735,7 +732,6 @@
 		15628F5B15F0F5C2000CF24B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				1AE4B40016D1FECD003C6D1C /* mainScene.js */,
 				35865BAB1821437D0032F173 /* res */,
 				1AE4B40216D1FECD003C6D1C /* src */,
 				D446FDA616102D86000ADA7B /* Default-568h@2x.png */,
@@ -1676,7 +1672,6 @@
 				1AA51AED16F71C3D000FDF05 /* jsb_opengl_constants.js in Resources */,
 				1A4B645416EE24A80025FE93 /* jsb_cocos2d_extension.js in Resources */,
 				1A4B645516EE24A80025FE93 /* main.debug.js in Resources */,
-				1AE4B40616D1FF4C003C6D1C /* mainScene.js in Resources */,
 				1A2757BE1697FBE500504026 /* jsb_chipmunk.js in Resources */,
 				35865BAC1821437D0032F173 /* res in Resources */,
 				1A2757BF1697FBE500504026 /* jsb_cocos2d.js in Resources */,
@@ -1801,7 +1796,6 @@
 				1A2758061698032000504026 /* js_bindings_system_registration.cpp in Sources */,
 				1A82F5F8169AC91400C4B13A /* LocalStorage.cpp in Sources */,
 				1A82F5F9169AC91400C4B13A /* LocalStorageAndroid.cpp in Sources */,
-				1AE4B40316D1FECD003C6D1C /* mainScene.js in Sources */,
 				1A4B644916EE23A70025FE93 /* jsb_cocos2dx_auto_api.js in Sources */,
 				1A4B644A16EE23A70025FE93 /* jsb_cocos2dx_auto.cpp in Sources */,
 				1A4B644B16EE23A70025FE93 /* jsb_cocos2dx_extension_auto_api.js in Sources */,
